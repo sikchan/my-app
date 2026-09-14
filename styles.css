@@ -1,0 +1,60 @@
+/*
+  Centralized design values make routine visual changes quick and consistent.
+  For example, update --accent to change the highlighted color site-wide.
+*/
+:root {
+  --page-background: #f4f7fb;
+  --card-background: #ffffff;
+  --text-color: #1f2937;
+  --accent: #2563eb;
+  --shadow-color: rgb(31 41 55 / 12%);
+}
+
+/*
+  Remove browser-default spacing and make the page fill the full viewport.
+  This creates a reliable foundation for vertically and horizontally centering
+  the welcome card.
+*/
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--page-background);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Use CSS Grid to center the only content block without fixed positioning. */
+.page-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/*
+  The card stays readable on narrow screens because its width is fluid, while
+  max-width prevents it from becoming overly wide on large displays.
+*/
+.welcome-card {
+  width: min(100%, 36rem);
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--card-background);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2.5rem var(--shadow-color);
+}
+
+/* Keep the title prominent, responsive, and visibly connected to the accent. */
+h1 {
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+/* A separated paragraph improves readability without introducing extra markup. */
+p {
+  margin: 1rem 0 0;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+}
