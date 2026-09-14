@@ -5,7 +5,7 @@ A minimal, dependency-free static website prepared for deployment on Cloudflare 
 The page displays:
 
 - Title: `Hello World!`
-- Text: `I'm Jae Seung Lee`
+- Text: `I'm Chansik Yun`
 
 ## Project structure
 
